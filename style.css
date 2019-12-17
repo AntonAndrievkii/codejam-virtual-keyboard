@@ -1,0 +1,206 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: #F07900;
+ 
+}
+
+body {
+  font: 600 14px/24px "Open Sans", sans-serif;
+  text-align: center;
+}
+
+body textarea {
+  width: 100%;
+  min-height: 10vh;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #666;
+  font-size: 20px;
+  color: #000000;
+  padding: 15px;
+  background-color: rgba(255, 250, 250, 0.52);
+}
+
+.main {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 992px;
+  height: 100%;
+  padding: 25px 15px;
+}
+
+.main:after {
+  content: "Антон Рак";
+  font-variant: unicase;
+  display: inline-block;
+  text-align: right;
+  color: #333;
+  margin-top: 5px;
+  padding-right: 5px;
+  font-weight: 100;
+}
+
+.keyboard {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 900px;
+  margin: auto;
+}
+
+.keyboard[data-case] .key_case {
+  display: none;
+}
+
+.keyboard[data-case="1"] [data-key="CapsLock"] {
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-box-shadow: 0 0 7px 0 #00edff;
+          box-shadow: 0 0 7px 0 #00edff;
+  position: relative;
+}
+
+.keyboard[data-case="1"] [data-key="CapsLock"]:after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #00fffe;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.keyboard[data-lang="ru"] .ru {
+  display: block;
+}
+
+.keyboard[data-lang="en"] .en {
+  display: block;
+}
+
+.keyboard[data-case="0"] .case_0 {
+  display: block;
+}
+
+.keyboard[data-case="1"] .case_1 {
+  display: block;
+}
+
+.keyboard[data-case="2"] .case_2 {
+  display: block;
+}
+
+.keyboard_wrapper {
+ 
+  -webkit-box-shadow: 6px 10px 10px #333;
+          box-shadow: 6px 10px 10px #333;
+  border-radius: 10px;
+}
+
+.keyboard__row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.keyboard__key {
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  white-space: nowrap;
+  background-color: #ca3333;
+  color: #eee;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 0 #222, inset 0 1px 3px rgba(255, 255, 255, 0.1);
+          box-shadow: 0 1px 0 #222, inset 0 1px 3px rgba(255, 255, 255, 0.1);
+  padding: 15px 10px;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 3px 2px;
+}
+
+.keyboard__key:active, .keyboard__key:focus, .keyboard__key--active {
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-box-shadow: 0 0 7px 0 #00edff;
+          box-shadow: 0 0 7px 0 #00edff;
+}
+
+.keyboard__key_segment {
+  display: none;
+}
+
+.keyboard__key_space {
+  -webkit-flex-basis: 33%;
+      -ms-flex-preferred-size: 33%;
+          flex-basis: 33%;
+}
+
+.keyboard__key_tab, .keyboard__key_controlright, .keyboard__key_controlleft {
+  -webkit-box-flex: 3;
+  -webkit-flex-grow: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+}
+
+.keyboard__key_backspace {
+  -webkit-box-flex: 4;
+  -webkit-flex-grow: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+}
